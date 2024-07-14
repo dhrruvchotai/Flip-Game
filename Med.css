@@ -1,0 +1,127 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: black;
+  }
+  
+  .main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row1,
+  .row2,
+  .row3,
+  .row4,.row5,.row6 {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .myCard {
+    cursor: pointer;
+    width: 25%;
+    height: 100%;
+    border: 1.5px solid black;
+    background: linear-gradient(
+      135deg,
+      #4d80f0 0%,
+      #3564cc 49%,
+      #416dcc 50%,
+      #2157cc 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .flipCard {
+    animation: flipMyCard 0.2s forwards;
+  }
+  
+  .unflipCard {
+    animation: unflipMyCard 0.2s forwards;
+  }
+  
+  @keyframes flipMyCard {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(180deg);
+      background: linear-gradient(
+        135deg,
+        #880fe8 0%,
+        #9330e5 49%,
+        #9e47e5 50%,
+        #880fe8 100%
+      );
+    }
+  }
+  @keyframes unflipMyCard {
+    0% {
+      transform: rotateY(180deg);
+      background: linear-gradient(
+        135deg,
+        #880fe8 0%,
+        #9330e5 49%,
+        #9e47e5 50%,
+        #880fe8 100%
+      );
+    }
+    100% {
+      transform: rotateY(0deg);
+      background: linear-gradient(
+        135deg,
+        #4d80f0 0%,
+        #3564cc 49%,
+        #416dcc 50%,
+        #2157cc 100%
+      );
+    }
+  }
+  
+  .forCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .myCard svg{
+    filter: invert(0.15);
+    transform: rotateY(180deg);
+  }
+  
+.closeAccess{
+    pointer-events: none;
+}
+  
+  
+.lineMain{
+  z-index: 2;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+}
+
+.line{
+  width: 0%;
+  height: 100%;
+  background-color:rgb(37, 227, 37);
+}
+
+.custom-swal-popup {
+  background-color: black !important;
+}
+
+.custom-swal-title{
+  color: white !important;
+}

@@ -1,0 +1,135 @@
+@media only screen and (max-width: 768px) {
+    
+    .logoDiv{
+        display: flex;
+        align-items: center;
+        width: 100vw;
+    }
+
+    .innerSpan{
+        margin-right: 2vw;
+    }
+       
+    .logoImg{
+        margin-left: 2vh;
+        scale:1.2;
+        border-radius:45%;
+    }
+
+    .logoHeading{
+        letter-spacing: 0.6vw;
+        margin-left:2vw;
+        font-size:6.6vh;
+    }
+
+    .mainContent{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .leftDiv {
+        font-size: 20vw;
+        height: 50%;
+        width: 100%;
+        margin-left: 30%;
+        margin-top:-20%;
+        font-weight: bold;
+        font-family: 'MainFont';
+        font-style: italic;
+        background: linear-gradient(50deg,#735d78,#f72585,#00008b,#4b0082,#fb6f92,#f72585);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 0.05vh black;
+    }
+
+    .rightDiv{
+        margin-top: -30%;
+        height: 50%;
+        border-radius: 5vh;
+        width:80%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 10%;
+        background-color: black;
+    }
+
+
+    .innerP1{
+        font-family: 'MainFont';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12vh;
+        color: white;
+    }
+    
+    .innerP2{
+        font-family: 'MainFont';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12vh;
+        color: white;
+    
+        /* Only for rotating L letter */
+    
+        transform: scale(-1, 1);
+        -moz-transform: scale(-1, 1);
+        -webkit-transform: scale(-1, 1);
+        -o-transform: scale(-1, 1);
+        -ms-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+    
+    }
+    
+    .innerP3{
+        font-family: 'MainFont';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12vh;
+        color: white;
+    }
+    
+    
+    .innerP4{
+        font-family: 'MainFont';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12vh;
+        color: white;
+    }
+    
+    .innerSecondP1{
+        font-family: 'MainFont';
+        margin-top: -3vh;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        color: white;
+    }
+    
+    .innerSecondP3{
+        font-family: 'MainFont';
+        margin-top: -3vh;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        color: white;
+    }
+    
+    .innerSecondP4{
+        font-family: 'MainFont';
+        margin-top: -3vh;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        color: white;
+    }
+
+}

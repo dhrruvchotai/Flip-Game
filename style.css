@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: HeadingFont;
+    src: url(./RebellionSquad-ZpprZ.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:MainFont;
+    src: url(./Constance-7BLXE.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*For Animated Border */
+
+.gradient-border {
+  --borderWidth: 1.2vh;
+  background: #1D1F20;
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+
+.gradient-border:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  /* background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #fb6f92, #023047, #ffb703); */
+  /* border-radius: calc(2 * var(--borderWidth)); */
+
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+
+  box-shadow: 0 0 100px rgba(231, 111, 195, 0.995); 
+
+}
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Main Content */
+
+body{
+        height: 100vh;
+        /* background-image: linear-gradient(to right, #ffecd2 0%, #fad0c4 100%); */
+        background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+}
+
+
+.logoDiv{
+    display: flex;
+    align-items: center;
+    margin-left: 2vh;
+}
+
+.innerSpan{
+    margin-right: 0.5vw;
+}
+
+.HeadingFont{
+    font-family:'HeadingFont';
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+.logoImg{
+    scale:1.18;;
+    border-radius:45%;
+}
+
+.logoHeading{
+    letter-spacing: 0.2vw;
+    margin-left:0.8vw;
+    font-size:6.6vh;
+}
+
+.mainContent{
+    display: flex;
+    height: 80vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftDiv {
+    font-size: 8vw;
+    font-weight: bold;
+    font-family: 'MainFont';
+    width: 30%;
+    font-style: italic;
+    background: linear-gradient(45deg,#735d78,#f72585,#00008b,#4b0082,#fb6f92,#f72585);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.05vh black;
+}
+
+
+.rightDiv{
+    border-radius: 1vh;
+    height: 80vh;
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    background-color: black;
+}
+
+.one{
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    border: 1px solid white;
+    background: linear-gradient(
+        135deg,
+        #4d80f0 0%,
+        #3564cc 49%,
+        #416dcc 50%,
+        #2157cc 100%
+      );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+}
+
+.two{
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    border: 1px solid white;
+    background: linear-gradient(
+      135deg,
+      #880fe8 0%,
+      #9330e5 49%,
+      #9e47e5 50%,
+      #880fe8 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+}
+
+.three{
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    border: 1px solid white;
+    background: linear-gradient(
+        135deg,
+        #4d80f0 0%,
+        #3564cc 49%,
+        #416dcc 50%,
+        #2157cc 100%
+      );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+}
+
+
+.four{
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    border: 1px solid white;
+    background: linear-gradient(
+    135deg,
+    #4d80f0 0%,
+    #3564cc 49%,
+    #416dcc 50%,
+    #2157cc 100%
+  );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+}
+
+.flipDivOne{
+    animation: flipOne 0.2s forwards;
+}
+
+.unflipDivOne{
+    animation: unflipOne 0.2s forwards ;
+}
+
+.flipDivThree{
+    animation: flipThree 0.2s forwards;
+}
+
+.unflipDivThree{
+    animation: unflipThree 0.2s forwards;
+} 
+
+.flipDivFour{
+    animation: flipFour 0.2s forwards;
+}
+
+.unflipDivFour{
+    animation: unflipFour 0.2s forwards;
+} 
+
+.innerP1{
+    font-family: 'MainFont';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24vh;
+    color: white;
+}
+
+.innerP2{
+    font-family: 'MainFont';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24vh;
+    color: white;
+
+    /* Only for rotating L letter */
+
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+
+}
+
+.innerP3{
+    font-family: 'MainFont';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24vh;
+    color: white;
+}
+
+
+.innerP4{
+    font-family: 'MainFont';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24vh;
+    color: white;
+}
+
+.innerSecondP1{
+    font-family: 'MainFont';
+    margin-top: -3vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: white;
+}
+
+.innerSecondP3{
+    font-family: 'MainFont';
+    margin-top: -3vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: white;
+}
+
+.innerSecondP4{
+    font-family: 'MainFont';
+    margin-top: -3vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: white;
+}
+
+.one.flipped .innerP1{
+    transform: rotateY(180deg);
+}
+
+.one.flipped .innerSecondP1 {
+    transform: rotateY(180deg);
+} 
+
+.one.card1Back.figures{
+    transform: rotateY(180deg);
+}
+
+
+.figures,.won,.lost,.abandoned{
+    transform: rotateY(180deg);
+}
+
+.easy,.med,.hard{
+    transform: rotateY(180deg);
+    font-weight: bolder;
+}
+
+.easy:hover{  
+     background-color: rgba(255, 255, 255, 0.114);
+}
+
+.med:hover{  
+     background-color: rgba(255, 255, 255, 0.09);
+}
+
+.hard:hover{
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.figures{
+    display: flex;
+    justify-content: center;
+    font-size: 4vw;
+    color: white;
+}
+
+.card3L0,.card3L1,.card3L2,.card3L3,.card3L4{
+    transform: rotateY(180deg);
+}
+
+.card3L0{
+    display: flex;
+    justify-content:flex-start;
+    color: white;
+    padding-left: 0.7vw;
+    padding-top: 1.2vh;
+    font-size: 1.9vw;
+}
+
+
+.card3L1,.card3L2,.card3L3,.card3L4{
+    display: flex;
+    justify-content:flex-start;
+    font-size: 1.3vw;
+    color: white;
+    padding-left: 0.7vw;
+    padding-top: 0.2vh;
+}
+
+.card4Back{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Invi{
+    visibility: hidden;
+}
+
+
+@keyframes flipOne{
+   0%{
+    transform:rotateY(0deg);
+   }
+   100%{
+    transform: rotateY(180deg);
+    background: linear-gradient(
+        135deg,
+        #880fe8 0%,
+        #9330e5 49%,
+        #9e47e5 50%,
+        #880fe8 100%
+      );
+    width: 100%;
+   }
+}
+@keyframes unflipOne{
+   0%{
+    transform:rotateY(180deg);
+    width: 100%;
+    background: linear-gradient(
+        135deg,
+        #880fe8 0%,
+        #9330e5 49%,
+        #9e47e5 50%,
+        #880fe8 100%
+      );
+}
+100%{
+    transform: rotateY(0deg);
+    width:100%;
+    background: linear-gradient(
+        135deg,
+        #4d80f0 0%,
+        #3564cc 49%,
+        #416dcc 50%,
+        #2157cc 100%
+      );
+   }
+}
+
+@keyframes flipThree{
+   0%{
+    transform:rotateY(0deg);
+   }
+   100%{
+    transform: rotateY(180deg);
+    background: linear-gradient(
+        135deg,
+        #880fe8 0%,
+        #9330e5 49%,
+        #9e47e5 50%,
+        #880fe8 100%
+      );
+    width: 100%;
+   }
+}
+@keyframes unflipThree{
+   0%{
+    transform:rotateY(180deg);
+    width: 100%;
+    background: linear-gradient(
+        135deg,
+        #880fe8 0%,
+        #9330e5 49%,
+        #9e47e5 50%,
+        #880fe8 100%
+      );
+}
+100%{
+    transform: rotateY(0deg);
+    width:100%;
+    background: linear-gradient(
+        135deg,
+        #4d80f0 0%,
+        #3564cc 49%,
+        #416dcc 50%,
+        #2157cc 100%
+      );
+   }
+}
+
+@keyframes flipFour{
+    0%{
+     transform:rotateY(0deg);
+    }
+    100%{
+     transform: rotateY(180deg);
+     background: linear-gradient(
+         135deg,
+         #880fe8 0%,
+         #9330e5 49%,
+         #9e47e5 50%,
+         #880fe8 100%
+       );
+     width: 50%;
+    }
+ }
+ @keyframes unflipFour{
+    0%{
+     transform:rotateY(180deg);
+     width: 50%;
+     background: linear-gradient(
+         135deg,
+         #880fe8 0%,
+         #9330e5 49%,
+         #9e47e5 50%,
+         #880fe8 100%
+       );
+ }
+ 100%{
+     transform: rotateY(0deg);
+     width:50%;
+     background: linear-gradient(
+         135deg,
+         #4d80f0 0%,
+         #3564cc 49%,
+         #416dcc 50%,
+         #2157cc 100%
+       );
+    }
+ }
+
+.card1Back {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.won{
+padding-left: 4vw;
+font-size: 2.5vw;
+color: white;
+}
+
+.lost{
+padding-left: 4vw;
+font-size: 2.5vw;
+color: white;
+}
+
+.abandoned{
+padding-left: 4vw;
+font-size: 2.5vw;
+color: white;
+}
+
+.btnWon{
+    font-size:2.5vw;
+    border: none;
+    background: transparent;
+}
+
+.btnLost{
+    font-size:2.5vw;
+    border: none;
+    background: transparent;
+}
+
+.btnAbandoned{
+    font-size:2.5vw;
+    border: none;
+    background: transparent;
+}
+
+.easy,.med,.hard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:33.3%;
+    color: white;
+    font-size: 2vw;
+}
+
+
+.row1{
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    height: 50%;
+}
+
+.row2{
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    height: 50%;
+}
+
