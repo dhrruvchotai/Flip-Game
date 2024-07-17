@@ -63,8 +63,7 @@ let icons = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width=
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="70" height="70" color="#000000" fill="none"><path d="M13 3.00231C12.5299 3 12.0307 3 11.5 3C7.02166 3 4.78249 3 3.39124 4.39124C2 5.78249 2 8.02166 2 12.5C2 16.9783 2 19.2175 3.39124 20.6088C4.78249 22 7.02166 22 11.5 22C15.9783 22 18.2175 22 19.6088 20.6088C21 19.2175 21 16.9783 21 12.5C21 11.9693 21 11.4701 20.9977 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /><path d="M18.5 2L18.7579 2.69703C19.0961 3.61102 19.2652 4.06802 19.5986 4.40139C19.932 4.73477 20.389 4.90387 21.303 5.24208L22 5.5L21.303 5.75792C20.389 6.09613 19.932 6.26524 19.5986 6.59861C19.2652 6.93198 19.0961 7.38898 18.7579 8.30297L18.5 9L18.2421 8.30297C17.9039 7.38898 17.7348 6.93198 17.4014 6.59861C17.068 6.26524 16.611 6.09613 15.697 5.75792L15 5.5L15.697 5.24208C16.611 4.90387 17.068 4.73477 17.4014 4.40139C17.7348 4.06802 17.9039 3.61102 18.2421 2.69703L18.5 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /><path d="M7 17.5C9.3317 15.0578 13.6432 14.9428 16 17.5M13.9951 10C13.9951 11.3807 12.8742 12.5 11.4915 12.5C10.1089 12.5 8.98797 11.3807 8.98797 10C8.98797 8.61929 10.1089 7.5 11.4915 7.5C12.8742 7.5 13.9951 8.61929 13.9951 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>'
     ];
 
-    console.log(icons.length);
-    
+    let totalSeconds = 0;
     let rowElmt1,colElmt1,rowElmt2,colElmt2;
     let count = 0;
     let flippedCards = "";
@@ -72,76 +71,93 @@ let icons = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width=
     let flippedCardRow;
     let flippedCardCol;
     let score = 0;
-    
-    
+    let checkArr;
+
     let icons2d = Array.from({ length: 8 }, () => Array(8).fill(null));
     icons = shuffle(icons.concat(icons)); 
-    
-    
+
+    checkArr = Array.from({ length: 8 }, () => Array(8).fill(0));
+
+    firstFlippedRow = -1;
+    firstFlippedCol = -1;
+
     function assignCard(){
         for(i=0;i<8;i++){
             for(j=0;j<8;j++){
-              icons2d[i][j] = icons[currentIconIndex];
-              currentIconIndex++;
+            icons2d[i][j] = icons[currentIconIndex];
+            currentIconIndex++;
             }
         }
     }
-    
-    
+
     assignCard();
-    
-    
-    
-    
+    displayTime();
+
+
+
     function shuffle(array) {
         let currentIndex = array.length;
         let randomIndex;
-       
-        while (currentIndex != 0) {
     
-           
+        while (currentIndex != 0) {
+
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex--;
-    
+
             [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+
         }
-    
+
         return array;
     }
-    
-    
-    
+
+
+
     function flip(row,col){
-    
+
         let newBox1 = document.querySelector(`.myCard[data-row = '${row}'][data-col = '${col}']`);
-    
+
         newBox1.classList.add('flipCard');
         newBox1.classList.remove('unflipCard');
-    
+
         newBox1.innerHTML = icons2d[row][col];
-    
+
+
         if(flippedCards == ""){ 
-    
-            flippedCards = newBox1.innerHTML;
+            
             flippedCardRow = row;
             flippedCardCol = col;
+
+            firstFlippedRow = row;
+            firstFlippedCol = col;
+
+            flippedCards = newBox1.innerHTML;
             newBox1.setAttribute("onclick","unflip("+row+","+col+")");
-    
+
         }
         else if(flippedCards == newBox1.innerHTML){
-    
+
             newBox1.setAttribute("onclick","");
-    
+
             newBox2 = document.querySelector(`.myCard[data-row = '${flippedCardRow}'][data-col = '${flippedCardCol}']`);
-    
+
             newBox2.setAttribute("onclick", "");
             flippedCardCol = -1;
             flippedCardRow = -1;
             flippedCards="";
-    
+
             score++;
-    
-            if(score == 32){
+
+            
+            checkArr[firstFlippedRow][firstFlippedCol] = 1;
+            checkArr[row][col] = 1;
+            
+            firstFlippedRow = -1;
+            firstFlippedCol = -1;
+
+
+            if(score == 18){
+
                 setTimeout(() => {
                     Swal.fire({
                         
@@ -181,60 +197,155 @@ let icons = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width=
                                     clearInterval(timerInterval);
                                 }
                             }).then((result) => {
-                                /* Read more about handling dismissals below */
+
                                 if (result.dismiss === Swal.DismissReason.timer) {
-                                    console.log("I was closed by the timer");
+       
                                 }
+                                
                             });
         
                         }
-                         else if (result.isDenied) {
-                          Swal.fire("Changes are not saved", "", "info");
+                        else if (result.isDenied) {
+                            window.location.href = "./index.html";
                         }
         
-                      });
+                    });
                 },700)
-              
-                // setTimeout(resetGame,2000);
+            
             }
-    
+
         }
         else{
-    
+
             setTimeout(() => {
                 unflip(row,col);
                 unflip(flippedCardRow,flippedCardCol);
-    
+
             },500); 
         }
     }
     function unflip(row,col){
-    
+
         flippedCards = "";
-    
+
         let newBox3 = document.querySelector(`.myCard[data-row = '${row}'][data-col = '${col}']`);
-    
+
         newBox3.innerHTML = "";
-    
+
         newBox3.classList.remove('flipCard');
         newBox3.classList.add('unflipCard');
-    
+
         newBox3.setAttribute("onclick","flip("+row+","+col+")");
-       
-    }
     
+    }
+
     function resetGame(){
         score = 0;
         let count = 0;
         let currentIconIndex = 0;
         icons = shuffle(icons.concat(icons)); 
+        checkArr = Array.from({ length: 6 }, () => Array(6).fill(0));
         
-        for(i=0;i<4;i++){
-            for(j=0;j<4;j++){
-            unflip(i,j);
-            icons2d[i][j] = icons[currentIconIndex];
-            currentIconIndex++;
+        for(i=0;i<8;i++){
+            for(j=0;j<8;j++){
+                unflip(i,j);
+                icons2d[i][j] = icons[currentIconIndex];
+                currentIconIndex++;
             }
         }
+        totalSeconds = 0;
+        displayTime();
+        
+    }
+
     
+    
+    function displayTime(){ 
+        let interval = 0;
+        let totalIntervals = 1200;
+        let increment = 100 / totalIntervals;
+
+
+        function setTime() {
+
+            totalSeconds += increment;
+            if (totalSeconds >= 100) {
+                document.querySelector(".line").style.width = "100%";
+
+                
+                clearInterval(interval);
+                
+                WonorLose();
+            } 
+
+            else {
+                document.querySelector(".line").style.width = totalSeconds + "%";
+            }
+        }
+
+        interval = setInterval(setTime, 100);
+        setTime();
+    }
+
+
+    function WonorLose(){
+        
+        for(i=0;i<8;i++){
+            for(j=0;j<8;j++){
+                if(checkArr[i][j] == 0){
+                   
+                    Swal.fire({
+                        title: "Oops.. You Lose THE GAME.",
+                        imageUrl: "crying-emoji.gif",
+                        imageWidth: 400,
+                        imageHeight: 300,
+
+                        customClass: {
+                            popup: 'custom-swal-popup',
+                            title: 'custom-swal-title'
+                        },
+
+
+                        showDenyButton: true,
+                        confirmButtonText: "New Game",
+                        denyButtonText: `Back to Home`
+                        
+                    }).then((result) => {
+                        
+                        if (result.isConfirmed) {
+                            setTimeout(resetGame,2700);
+                            let timerInterval;
+                            Swal.fire({
+                                title: "New Game!!!",
+                                html: "New Game Starts in <b></b> milliseconds.",
+                                timer: 2000,
+                                timerProgressBar: true,
+                                didOpen: () => {
+                                    Swal.showLoading();
+                                    const timer = Swal.getPopup().querySelector("b");
+                                    timerInterval = setInterval(() => {
+                                        timer.textContent = `${Swal.getTimerLeft()}`;
+                                    }, 100);
+                                },
+                                willClose: () => {
+                                    clearInterval(timerInterval);
+                                }
+                            }).then((result) => {
+                                
+                                if (result.dismiss === Swal.DismissReason.timer) {
+                                }
+                            });
+                        }
+
+                        else{
+                            window.location.href = "./index.html";
+                        }
+
+                      });
+
+                    return;
+                }
+            }
+        }
+
     }

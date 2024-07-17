@@ -234,7 +234,7 @@ let icons = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width=
     
     function displayTime(){ 
         let interval = 0;
-        let totalIntervals = 40;
+        let totalIntervals = 800;
         let increment = 100 / totalIntervals;
 
 
