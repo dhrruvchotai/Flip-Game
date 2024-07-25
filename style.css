@@ -335,9 +335,12 @@ body{
 }
 
 .figures{
+    font-weight:600;
+    font-style: italic;
+    background-color: #e0596263;
     display: flex;
     justify-content: center;
-    font-size: 4vw;
+    font-size: 3.5vw;
     color: white;
 }
 
@@ -514,36 +517,55 @@ body{
 }
 
 .won{
-padding-left: 4vw;
-font-size: 2.5vw;
-color: white;
+    font-family: 'MainFont';
+    padding-top: 1.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vw;
+    color: rgba(255, 255, 255, 0.824);
 }
 
 .lost{
-padding-left: 4vw;
-font-size: 2.5vw;
-color: white;
+    padding-top: 1vh;
+    font-family: 'MainFont';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vw;
+    color: rgba(255, 255, 255, 0.824);
 }
 
 .abandoned{
-padding-left: 4vw;
-font-size: 2.5vw;
-color: white;
+    font-family: 'MainFont';
+    padding-top: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2vw;
+    font-size: 2.5vw;
+    color: rgba(255, 255, 255, 0.824);
 }
 
 .btnWon{
+    padding-left: 1.5vh;
+    color: #fca311;
     font-size:2.5vw;
     border: none;
     background: transparent;
 }
 
 .btnLost{
+    padding-left: 1.5vh;
+    color: #fca311;
     font-size:2.5vw;
     border: none;
     background: transparent;
 }
 
 .btnAbandoned{
+    padding-left: 1.5vh;
+    color: #ffba08;
     font-size:2.5vw;
     border: none;
     background: transparent;

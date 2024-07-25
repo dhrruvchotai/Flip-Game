@@ -5,16 +5,23 @@ let four = document.querySelector(".four");
 let row1 = document.querySelector('.row1');
 let row2 = document.querySelector('.row2');
 
+
 function flip(cardNum)
 {
-
+   
     if(cardNum == 1)
     {
         
-        row1.innerHTML = '<div class="card1Back" onclick="unflip(1)"> <div class="figures">FIGURES</div> <div class="won">WON <button class="btnWon"> : 1</button></div> <div class="lost">LOST <button class="btnLost"> : 1</button></div> <div class="abandoned">ABANDONED <button class="btnAbandoned"> : 1</button></div> </div>';
+        row1.innerHTML = '<div class="card1Back" onclick="unflip(1)"> <div class="figures">FIGURES</div> <div class="won">WON : <button class="btnWon"> :  0</button></div> <div class="lost">LOST : <button class="btnLost">0</button></div> <div class="abandoned">ABANDONED : <button class="btnAbandoned">0</button></div> </div>';
  
         row1.classList.add('flipDivOne');
         row1.classList.remove('unflipDivOne');
+
+        let won = document.querySelector('.btnWon');
+        won.innerHTML = localStorage.getItem('winCount');
+
+        let lose = document.querySelector('.btnLost');
+        lose.innerHTML = localStorage.getItem('loseCount');
 
     }
 
@@ -66,11 +73,6 @@ function unflip(cardNum)
 
         row2.classList.remove('flipDivThree');
         row2.classList.add('unflipDivThree');
-
-    }
-
-    else if(cardNum == 4)
-    {
 
     }
 

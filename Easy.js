@@ -255,11 +255,24 @@ let icons = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width=
 
 
     function WonorLose(){
-        
+
+        let decision = true;
+
         for(i=0;i<4;i++){
             for(j=0;j<4;j++){
                 if(checkArr[i][j] == 0){
-                   
+                    
+                    decision = false;
+
+                    if(localStorage.getItem('loseCount')){
+                        localStorage.setItem('loseCount',parseInt(localStorage.getItem('loseCount'))+1)
+                        console.log("Acccess.")
+                    }
+                    else{
+                        localStorage.setItem('loseCount',1);
+                    }
+
+
                     Swal.fire({
                         title: "Oops.. You Lose THE GAME.",
                         imageUrl: "crying-emoji.gif",
@@ -311,6 +324,16 @@ let icons = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width=
 
                     return;
                 }
+            }
+
+        }
+        
+        if(decision){
+            if(localStorage.getItem('winCount')){
+                localStorage.setItem('winCount',parseInt(localStorage.getItem('winCount'))+1)
+            }
+            else{
+                localStorage.setItem('winCount',1);
             }
         }
 
