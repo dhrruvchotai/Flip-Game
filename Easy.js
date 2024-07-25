@@ -112,7 +112,7 @@ let icons = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width=
             firstFlippedCol = -1;
 
 
-            if(score == 1){
+            if(score == 8){
                 
                 if(localStorage.getItem('winCount')){
                     localStorage.setItem('winCount',parseInt(localStorage.getItem('winCount'))+1)

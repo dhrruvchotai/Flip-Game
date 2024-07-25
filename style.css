@@ -527,7 +527,7 @@ body{
 }
 
 .lost{
-    padding-top: 1vh;
+    padding-top: 1.5vh;
     font-family: 'MainFont';
     display: flex;
     justify-content: center;
@@ -538,12 +538,11 @@ body{
 
 .abandoned{
     font-family: 'MainFont';
-    padding-top: 1vh;
+    padding-top: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 2vw;
-    font-size: 2.5vw;
+    padding-left: 1.5vw;
     color: rgba(255, 255, 255, 0.824);
 }
 
@@ -564,11 +563,15 @@ body{
 }
 
 .btnAbandoned{
-    padding-left: 1.5vh;
-    color: #ffba08;
-    font-size:2.5vw;
+    cursor: pointer;
+    /* background-color: #04aefd; */
+    background-color: #e7b5b88c;
+    font-size:2vw;
+    padding-left: 0.9vw;
+    color: white;
+    border-radius: 1.3vw;
     border: none;
-    background: transparent;
+    width: 20vw;
 }
 
 .easy,.med,.hard{
@@ -595,4 +598,31 @@ body{
     flex-direction:row;
     height: 50%;
 }
+
+.swal2-popup {
+    background-color: black !important;
+    width: 40vw;
+}
+
+.swal2-title {
+    font-size: 2.5vw !important;
+    color: white !important; 
+}
+
+.swal2-text {
+    font-size:2.5vw !important;
+    color: white !important; 
+}
+
+.swal2-confirm, .swal2-deny {
+    font-size: 18px !important; 
+    padding: 10px 20px !important; 
+    color: white !important;
+    border-radius: 5px !important; 
+}
+
+.swal2-confirm:hover, .swal2-deny:hover {
+    border: 0.3vh solid white;
+}
+
 
