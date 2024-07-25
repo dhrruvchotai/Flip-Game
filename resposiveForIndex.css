@@ -2,22 +2,20 @@
     
     
     body{
+        transform: scale(1);
+        overflow-x: hidden;
+        overflow-y: hidden;
         margin: 0%;
         padding: 0%;
         box-sizing: border-box;
-        overflow-y: hidden;
-        position: relative;
-        height: 90vh;    
+        height: 100vh;    
         background-attachment: fixed;
         background-size: contain;
         background-position: center center;
-        /* background-image: linear-gradient(to right, #ffecd2 0%, #fad0c4 100%); */
         background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+
     }
 
-    body::-webkit-scrollbar{
-        display: none;
-    }
 
     .logoDiv{
         display: flex;
@@ -45,16 +43,16 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        width: 104vw;
+        width: 100vw;
         justify-content: center;
         align-items: center;
     }
 
     .leftDiv {
-        font-size: 19vw;
+        font-size: 16vw;
         height: 50%;
         width: 80%;
-        top: 16%;
+        top: 13%;
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -73,9 +71,10 @@
         width:65%;
         height:50%;
         position: absolute;
-        top: 51.1%;
+        top: 40%;
         border-radius: 5vh;
         width:90vw;
+        right:0.5%; 
         display: flex;
         flex-wrap: wrap;
         margin-right:5vw;
@@ -165,6 +164,12 @@
     }
     .two{
         pointer-events: none;
+    }
+
+    .easy,.med,.hard{
+        font-size:6vw;
+        transform: rotateY(180deg);
+        font-weight: bolder;
     }
 
 }

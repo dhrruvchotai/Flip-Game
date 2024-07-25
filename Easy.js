@@ -113,6 +113,13 @@ let icons = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width=
 
 
             if(score == 8){
+                
+                if(localStorage.getItem('winCount')){
+                    localStorage.setItem('winCount',parseInt(localStorage.getItem('winCount'))+1)
+                }
+                else{
+                    localStorage.setItem('winCount',1);
+                }
 
                 setTimeout(() => {
                     Swal.fire({
