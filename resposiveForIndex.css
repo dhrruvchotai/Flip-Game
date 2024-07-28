@@ -165,6 +165,9 @@
     .two{
         pointer-events: none;
     }
+    .three{
+        overflow: hidden;
+    }
 
     .easy,.med,.hard{
         font-size:6vw;
@@ -172,4 +175,90 @@
         font-weight: bolder;
     }
 
+    .figures{
+        font-weight:600;
+        font-style: italic;
+        background-color: #e0596263;
+        display: flex;
+        justify-content: center;
+        font-size: 8vw;
+        color: white;
+    }
+
+    .won{
+        font-family: 'MainFont';
+        padding-top: 1.5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 7vw;
+        color: rgba(255, 255, 255, 0.824);
+    }
+    
+    .lost{
+        padding-top: 1.5vh;
+        font-family: 'MainFont';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 7vw;
+        color: rgba(255, 255, 255, 0.824);
+    }
+    
+    .abandoned{
+        font-family: 'MainFont';
+        padding-top: 2vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.824);
+    }
+    
+    .btnWon{
+        padding-left: 1.5vh;
+        color: #fca311;
+        font-size:7vw;
+        border: none;
+        background: transparent;
+    }
+    
+    .btnLost{
+        padding-left: 1.5vh;
+        color: #fca311;
+        font-size:7vw;
+        border: none;
+        background: transparent;
+    }
+    
+    .btnAbandoned{
+        cursor: pointer;
+        background-color: #e7b5b88c;
+        font-size:5vw;
+        padding-left: 0.9vw;
+        color: white;
+        border-radius: 1.8vw;
+        border: none;
+        width: 50vw;
+    }
+
+    .card3L0{
+        font-family: 'MainFont';
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        font-size: 5.5vw;
+        padding-top: -3vh;
+
+    }
+
+    .card3L1,.card3L2,.card3L3{
+        font-size: 3.6vw;
+        color: white;
+        margin-left: 10px;
+        margin-top: -8px;
+    }
+    
+    .card3L4{
+        display: none;
+    }
 }

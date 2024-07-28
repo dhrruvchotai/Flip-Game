@@ -1,3 +1,4 @@
+let deviceWidth = window.innerWidth;
 let one = document.querySelector(".one");
 let two = document.querySelector('.two');
 let three = document.querySelector(".three");
@@ -129,60 +130,80 @@ function redirect(mode)
     }
 }
 
-function resetWL(){
+function resetWL(){   
+    if(deviceWidth <= 768){
+        
 
-    Swal.fire({
-        title: "Are you sure ?",
-        text:"You want to reset the score!",
-        icon: "warning",
-        showDenyButton: true,
-        confirmButtonText: "Yes, Reset it.",
-        denyButtonText: `Cancel`,
-
-        customClass: {
-            popup: 'swal2-popup',
-            title: 'swal2-title',
-            text:'swal2-title',
-            confirmButton: 'swal2-confirm',
-            denyButton: 'swal2-deny'
+        if(localStorage.getItem('loseCount')){
+            localStorage.setItem('loseCount',0)
+        }
+        else{
+            localStorage.setItem('loseCount',0);
+        }
+    
+        if(localStorage.getItem('winCount')){
+            localStorage.setItem('winCount',0)
+        }
+        else{
+            localStorage.setItem('winCount',0);
         }
 
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire("Saved!", "", "success");
+    }
+    else{
 
-            if(localStorage.getItem('loseCount')){
-                localStorage.setItem('loseCount',0)
+        Swal.fire({
+            title: "Are you sure?",
+            text: "That want to reset the score!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, reset it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+    
+                if(localStorage.getItem('loseCount')){
+                    localStorage.setItem('loseCount',0)
+                }
+                else{
+                    localStorage.setItem('loseCount',0);
+                }
+            
+                if(localStorage.getItem('winCount')){
+                    localStorage.setItem('winCount',0)
+                }
+                else{
+                    localStorage.setItem('winCount',0);
+                }
+    
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                  });
+        
             }
-            else{
-                localStorage.setItem('loseCount',0);
-            }
-
-            if(localStorage.getItem('winCount')){
-                localStorage.setItem('winCount',0)
-            }
-            else{
-                localStorage.setItem('winCount',0);
-            }
-
-            let row1 = document.querySelector('.row1');
-
-            row1.innerHTML = '<div class="card1Back" onclick="unflip(1)"> <div class="figures">FIGURES</div> <div class="won">WON : <button class="btnWon">0</button></div> <div class="lost">LOST : <button class="btnLost">0</button></div> <div class="abandoned"><button class="btnAbandoned" onclick="resetWL()" >Reset Score</button></div> </div>';
-
-            row1.classList.remove('unflipDivOne');
-            row1.classList.add('flipDivOne');
-
-
-        } else if (result.isDenied) {
-          Swal.fire("Changes are not saved", "", "info");
-          
-          let row1 = document.querySelector('.row1');
-
-          row1.innerHTML = '<div class="card1Back" onclick="unflip(1)"> <div class="figures">FIGURES</div> <div class="won">WON : <button class="btnWon">'+localStorage.getItem('winCount')+'</button></div> <div class="lost">LOST : <button class="btnLost">'+localStorage.getItem('loseCount')+'</button></div> <div class="abandoned"><button class="btnAbandoned" onclick="resetWL()" >Reset Score</button></div> </div>';
-
-          row1.classList.remove('unflipDivOne');
-          row1.classList.add('flipDivOne');
-        }
-      });
-
+        });
+    }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Select all divs with classes easy, med, and hard
+    const divs = document.querySelectorAll(".easy, .med, .hard");
+
+    // Add event listeners to each selected div
+    divs.forEach(div => {
+        div.addEventListener("touchstart", function() {
+            div.classList.add("touch-active");
+        });
+
+        div.addEventListener("touchend", function() {
+            div.classList.remove("touch-active");
+        });
+
+        // Optionally handle touchcancel to remove the class if the touch is canceled
+        div.addEventListener("touchcancel", function() {
+            div.classList.remove("touch-active");
+        });
+    });
+});

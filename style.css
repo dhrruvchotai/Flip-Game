@@ -27,7 +27,6 @@
   --borderWidth: 1.2vh;
   background: #1D1F20;
   position: relative;
-  border-radius: var(--borderWidth);
 }
 
 .gradient-border:after {
@@ -37,7 +36,7 @@
   left: calc(-1 * var(--borderWidth));
   height: calc(100% + var(--borderWidth) * 2);
   width: calc(100% + var(--borderWidth) * 2);
-  /* background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #fb6f92, #023047, #ffb703); */
+  /* background: linear-gradient(60deg,#6d23b6,#ffb3c1,#db00b6); */
   /* border-radius: calc(2 * var(--borderWidth)); */
 
   z-index: -1;
@@ -120,7 +119,6 @@ body{
 
 
 .rightDiv{
-    border-radius: 1vh;
     height: 80vh;
     width: 50vw;
     display: flex;
@@ -321,6 +319,11 @@ body{
     transform: rotateY(180deg);
     font-weight: bolder;
 }
+
+.touch-active {
+    background-color: rgba(255, 255, 255, 0.21);
+}
+
 
 .easy:hover{  
      background-color: rgba(255, 255, 255, 0.114);
