@@ -312,7 +312,7 @@ else{
     
     function displayTime(){ 
         let interval = 0;
-        let totalIntervals = 7500;
+        let totalIntervals = 800;
         let increment = 100 / totalIntervals;
 
 
