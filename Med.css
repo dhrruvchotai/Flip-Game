@@ -123,5 +123,34 @@
 }
 
 .custom-swal-title{
+  margin-top:-30px;
+  margin-bottom: 5px;
   color: white !important;
+}
+
+.custom-swal-image {
+  margin-right: 9vh;
+}
+
+@media only screen and (max-width: 768px) {
+  .notForPh {
+    display: none;
+  }
+  
+  .notForPhRow{
+    display: none;
+  }
+
+    
+  .row1,
+  .row2,
+  .row3,
+  .row4{
+    width: 100%;
+    height: 23%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  
 }
