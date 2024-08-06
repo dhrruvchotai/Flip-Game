@@ -129,7 +129,7 @@ body {
 }
 
 .custom-swal-image {
-  margin-right: 9vh;
+  margin-left: 14vh;
 }
 
 @media only screen and (max-width: 768px) {
@@ -148,6 +148,10 @@ body {
 
   .myCard{
     width: 33.3%;
+  }
+
+  .custom-swal-image {
+    margin-left: 4.5vh;
   }
 }
 

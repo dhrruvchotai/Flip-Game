@@ -283,7 +283,7 @@ let icons;
     
     function displayTime(){ 
         let interval = 0;
-        let totalIntervals = 100;
+        let totalIntervals = 600;
         let increment = 100 / totalIntervals;
 
 
@@ -455,13 +455,13 @@ let icons;
             }
         }
 
-        if(decision){
-            if(localStorage.getItem('winCount')){
-                localStorage.setItem('winCount',parseInt(localStorage.getItem('winCount'))+1)
-            }
-            else{
-                localStorage.setItem('winCount',1);
-            }
-        }
+        // if(decision){
+        //     if(localStorage.getItem('winCount')){
+        //         localStorage.setItem('winCount',parseInt(localStorage.getItem('winCount'))+1)
+        //     }
+        //     else{
+        //         localStorage.setItem('winCount',1);
+        //     }
+        // }
 
     }
