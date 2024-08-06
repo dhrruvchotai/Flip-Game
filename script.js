@@ -177,8 +177,8 @@ function resetWL(){
                 }
     
                 Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
+                    title: "Updated!",
+                    text: "Your Score has been Updated.",
                     icon: "success"
                   });
         
