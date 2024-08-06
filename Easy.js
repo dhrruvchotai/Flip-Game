@@ -283,7 +283,7 @@ let icons;
     
     function displayTime(){ 
         let interval = 0;
-        let totalIntervals = 100;
+        let totalIntervals = 800;
         let increment = 100 / totalIntervals;
 
 
