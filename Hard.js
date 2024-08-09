@@ -345,7 +345,7 @@ else{
     
     function displayTime(){ 
         let interval = 0;
-        let totalIntervals = 600;
+        let totalIntervals = 900;
         let increment = 100 / totalIntervals;
 
 
