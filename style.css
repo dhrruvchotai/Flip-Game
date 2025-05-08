@@ -36,8 +36,6 @@
   left: calc(-1 * var(--borderWidth));
   height: calc(100% + var(--borderWidth) * 2);
   width: calc(100% + var(--borderWidth) * 2);
-  /* background: linear-gradient(60deg,#6d23b6,#ffb3c1,#db00b6); */
-  /* border-radius: calc(2 * var(--borderWidth)); */
 
   z-index: -1;
   animation: animatedgradient 3s ease alternate infinite;
